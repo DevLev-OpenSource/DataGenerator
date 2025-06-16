@@ -23,34 +23,25 @@
 
 ניגש לפרויקט הראשי וניצור פורק.
 **פורק זו פעולה שמעתיקה את הריפו של הפרויקט הראשי אל הגיטהאב שלנו.**
-
-![כפתור fork](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%201.png?raw=true)
+<img src="assets/how to start/Screenshot 1.png" alt="drawing"/>
 
 אין צורך לבצע שינויים במסך הביניים, פשוט לאשר, וזה מיד יעביר אותנו אל הריפו שנוצר אצלנו.
 נוכל לראות שהפורק, הריפו שנוצר אצלנו, ממש זהה לריפו של הפרויקט הראשי.
 
-![יצירת fork](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%202.png?raw=true)
-
+<img src="assets/how to start/Screenshot 2.png" alt="drawing"/>
 #### 2. יצירת קלון Clone
 
 בריפו שנוצר אצלנו, בפורק, נעשה קלון.
 **זה למעשה יוצר עותק של הפרויקט על המחשב שלנו, ומאפשר לנו להריץ אותו לוקאלית.**
 
-![יצירת clone](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%203.png?raw=true)
-
-אפשר לעשות את זה דרך הטרמינל, ואפשר גם ממש להוריד ידנית את הפרויקט בקובץ zip.
-נדגים את הפעולה הזו דרך הטרמינל.
-נעתיק את הקישור ובטרמינל נריץ את הפקודה:
-
-    git clone https://github.com/[your user]/os-practice.git
-
+<img src="assets/how to start/Screenshot 3.png" alt="drawing"/>
+אפשר לעשות את זה דרך הטרמינל, ואפשר גם ממש להוריד ידנית את הפרויקט בקובץ zip, אנחנו נממש את זה בוויזואל סטודיו.
 זה יצור לנו את הפרויקט על המחשב, ועכשיו נוכל לעבוד עליו ולהריץ אותו מקומית.
-![הפרויקט המקומי](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/SS%204.png?raw=true)
+נפתח את וויזואל סטודיו:
 
-![קביעת המיקום](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%205.png?raw=true)
-
-![קביעת המיקום](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%206.png?raw=true)
-
+<img src="assets/how to start/Screenshot 4.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 5.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 6.png" alt="drawing"/>
 _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו פעולות שנעשה פעם אחת כשנצטרף לפרויקט. מכאן המשך התהליך זו רוטינה שחוזרת על עצמה._
 
 #### 3. פתיחת אישיו Issue
@@ -70,9 +61,9 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 
 במקרה שלנו בפרויקט התרגול - אנחנו נפתח את האישיו, ואוטומטית נהיה מוגדרים כאחראים עליו (זו אוטומציה ספציפית לפרויקט הזה, כאמור בדרך כלל צריך להגיב ולבקש ממנהלי הפרויקט שיגדירו אותנו).
 
-![יצירת issue](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%207.png?raw=true)
+<img src="assets/how to start/Screenshot 7.png" alt="drawing"/>
 
-![יצירת issue](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%208.png?raw=true)
+<img src="assets/how to start/Screenshot 4.png" alt="drawing"/>
 
 ![הגדרה אוטומטית של אחראי](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/8-auto-assign.png)
 
@@ -87,59 +78,31 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 
 אפשר לפתוח בראנץ' בגיטהאב ואפשר גם דרך ה-VSCode.
 נלחץ על ה-main שבפינה השמאלית למטה, ונבחר בתפריט Create new branch.
-ניתן לו שם, שיהיה בעל משמעות כמובן.
+ניתן לו שם, שיהיה בעל משמעות כמובן, ונוסיף אותנו לרשימה של עוזרים אם אנחנו כבר לא שם.
 
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%209.png?raw=true)
+<img src="assets/how to start/Screenshot 9.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 10.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 11.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 12.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 13.png" alt="drawing"/>
 
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2010.png?raw=true)
 
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2011.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2012.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2013.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2014.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2015.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2016.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2017.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2018.png?raw=true)
-
-![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2019.png?raw=true)
 נוכל לראות שאיפה שהיה main קודם עכשיו מופיע הבראנץ' החדש שפתחנו - כלומר עכשיו אנחנו עובדים על הבראנץ' החדש, וכל השינויים שנבצע ישמרו רק בו.
 
-נתקין את כל הספריות באמצעות הפקודה
-
-    npm install
-ונריץ את הפרויקט.
-
-לאחר מכן נוסיף את השינויים שלנו - קובץ טקסט פשוט לתיקייה
-
-    Docs/people
-נוכל לראות ב-local host את השינויים שביצענו.
-
-![עבודה מקומית](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/see-changes.png)
+<img src="assets/how to start/Screenshot 14.png" alt="drawing"/>
 
 נראה טוב!
 אז יאללה נעשה קומיט ופוש.
 
-![ביצוע commit](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/10-commit.png)
 
-![ביצוע push](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/11-push.png)
 
 אם נסתכל על הפורק שלנו נוכל לראות ברשימת הבראנצ'ים את הבראנץ' החדש שפתחנו.
 נשים לב שבבראנץ' הראשי השינויים שעשינו לא מופיעים, הם רק בבראנץ' שעבדנו עליו.
 
-![הבראנץ' שלנו](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/12-see-branch.png)
 
 #### 5. פתיחת פול ריקווסט Pull Request
 
 עכשיו נחזור **לפרויקט הראשי**, ונפתח בו פול ריקווסט למיזוג הבראנץ' שלנו אל הפרויקט.
-
 **מה זה בכלל פול ריקווסט?**
 
 פול ריקווסט זו בקשה למזג את העבודה שלנו אל תוך הפרויקט הראשי.
@@ -153,18 +116,20 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 אז בריפו של הפרויקט הראשי, ניגש ללשונית פול ריקווסטס ונפתח חדש.
 נלחץ על compare across forks, ובצד שמאל נראה את הריפו והבראנץ' הראשי של הפרויקט, ובצד ימין נבחר את הפורק שלנו ואת הבראנץ' שעבדנו עליו.
 
-![יצירת PR](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/13-new-pr.png)
 
-![יצירת PR](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/14-choose-fork-branch.png)
-
+<img src="assets/how to start/Screenshot 15.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 16.png" alt="drawing"/>
 נוכל להסתכל על כל השינויים והקומיטים שביצענו, ונלחץ על Create pull request.
 הפול ריקווסט נוצר ומריץ מספר בדיקות ואוטומציות. תוך כמה רגעים זה מסתיים, והפול ריקווסט שלנו מוכן לריוויו על ידי מנהלי הפרויקט.
 
-![קישור לאישיו](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/16-link-issue.png)
+<img src="assets/how to start/Screenshot 17.png" alt="drawing"/>
+<img src="assets/how to start/Screenshot 18.png" alt="drawing"/>
 
-![יצירת PR](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/15-create-pr.png)
 
-הידד! השלמנו את התהליך! תרגלנו תרומה לקוד פתוח!
+הידד! השלמנו את התהליך!
+
+ נוכל לדעת אם הקוד שלנו נוסף למאגר אם זה יראה לנו שעשו merge
+<img src="assets/how to start/Screenshot 19.png" alt="drawing"/>
 
 ### אז מה עשינו בעצם? בואו נעשה קצת סדר
 
