@@ -99,13 +99,19 @@ More challenging contributions:
 - Add configuration settings and preferences
 - Improve the user experience with better UI elements
 
+### Contribution Rules
+- Follow these conventions when naming your Git branches:
+   - Use `feat/` followed by a short, descriptive name for the feature you're adding(eg. feat/add_type).
+   - Use `fix/` followed by a short description of the bug you're fixing (eg. fix/fix_typo).
+
+
 ### Contribution Process
 1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+2. **Create** a feature branch (`git checkout -b feat/amazing_feature`)
 3. **Make** your changes following the code conventions
 4. **Test** your changes with both interfaces
 5. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-6. **Push** to your branch (`git push origin feature/amazing-feature`)
+6. **Push** to your branch (`git push origin feat/amazing_feature`)
 7. **Open** a Pull Request
 
 We hope to see your bug fixes and improvments to out code!
