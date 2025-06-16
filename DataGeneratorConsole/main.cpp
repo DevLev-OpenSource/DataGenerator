@@ -12,7 +12,7 @@
 #include <string>
 #include <set>
 #include <limits>
-#include "generator.h"
+#include "../DataGenerator/generator.h"
 
 // Function to clear input buffer
 void clearInputBuffer() {

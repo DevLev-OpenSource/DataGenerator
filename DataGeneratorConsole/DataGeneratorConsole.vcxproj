@@ -123,12 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\DataGenerator\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DataGenerator\DataGenerator.vcxproj">
       <Project>{2832f9a0-95a8-4691-a6d3-849b03acbaec}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
