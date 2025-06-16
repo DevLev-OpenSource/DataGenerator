@@ -1,13 +1,21 @@
 
-## איך לתרום לקוד פתוח
+## מדריך תרומה ראשונית בפרויקט התרגול
 
-**מאת דרור קרפפן + אוריה חנוכה**
+**מאת דרור קרפפן ומאיר קרומבי**
+
 ברוכים הבאים לעולם הקוד הפתוח!
 במדריך הזה נלמד איך עובד תהליך התרומה לקוד פתוח, ונדגים כאן שלב אחר שלב תרומה לפרויקט התרגול של קהילת מעקף.
 
+**לפני שנתחיל**
+
+- מומלץ לצפות בסרטון ההדרכה הקצר <a target="_blank" href="https://youtu.be/IVNxfbHNHZk?si=CCX2i2qwxyKNfuSS">איך להתחיל לתרום לקוד פתוח</a>, שמדגים את כל מה שנציג במדריך הזה.
+- היכנסו <a target="_blank" href="https://github.com/UrielOfir/os-practice">לפרויקט התרגול</a>.
+
 ### מה נעשה בתרגול הזה?
 
-נלמד איך לעשות פורק למאגר ואיך לעשות פול ריקווסט כדי להכניס את הקוד שלכם למאגר.
+נוסיף מין "כרטיס חבר" באתר של פרויקט התרגול, על ידי הוספת קובץ טקסט פשוט לפרויקט.
+
+אנחנו נעבוד בשני מישורים - יהיו פעולות שנבצע **בפרויקט הראשי**, ויהיו פעולות שנבצע **מקומית אצלנו**.
 
 ![תרשים של תהליך העבודה בקוד פתוח](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/os-workflow.png)
 
@@ -16,19 +24,19 @@
 ניגש לפרויקט הראשי וניצור פורק.
 **פורק זו פעולה שמעתיקה את הריפו של הפרויקט הראשי אל הגיטהאב שלנו.**
 
-![כפתור fork](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/1-fork-btn.png)
+![כפתור fork](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%201.png?raw=true)
 
 אין צורך לבצע שינויים במסך הביניים, פשוט לאשר, וזה מיד יעביר אותנו אל הריפו שנוצר אצלנו.
 נוכל לראות שהפורק, הריפו שנוצר אצלנו, ממש זהה לריפו של הפרויקט הראשי.
 
-![יצירת fork](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/2-create-fork.png)
+![יצירת fork](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%202.png?raw=true)
 
 #### 2. יצירת קלון Clone
 
 בריפו שנוצר אצלנו, בפורק, נעשה קלון.
 **זה למעשה יוצר עותק של הפרויקט על המחשב שלנו, ומאפשר לנו להריץ אותו לוקאלית.**
 
-![יצירת clone](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/4-clone.png)
+![יצירת clone](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%203.png?raw=true)
 
 אפשר לעשות את זה דרך הטרמינל, ואפשר גם ממש להוריד ידנית את הפרויקט בקובץ zip.
 נדגים את הפעולה הזו דרך הטרמינל.
@@ -37,7 +45,11 @@
     git clone https://github.com/[your user]/os-practice.git
 
 זה יצור לנו את הפרויקט על המחשב, ועכשיו נוכל לעבוד עליו ולהריץ אותו מקומית.
-![הפרויקט המקומי](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/local-project.png)
+![הפרויקט המקומי](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/SS%204.png?raw=true)
+
+![קביעת המיקום](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%205.png?raw=true)
+
+![קביעת המיקום](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%206.png?raw=true)
 
 _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו פעולות שנעשה פעם אחת כשנצטרף לפרויקט. מכאן המשך התהליך זו רוטינה שחוזרת על עצמה._
 
@@ -58,9 +70,9 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 
 במקרה שלנו בפרויקט התרגול - אנחנו נפתח את האישיו, ואוטומטית נהיה מוגדרים כאחראים עליו (זו אוטומציה ספציפית לפרויקט הזה, כאמור בדרך כלל צריך להגיב ולבקש ממנהלי הפרויקט שיגדירו אותנו).
 
-![יצירת issue](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/6-new-issue.png)
+![יצירת issue](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%207.png?raw=true)
 
-![יצירת issue](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/7-set-issue.png)
+![יצירת issue](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%208.png?raw=true)
 
 ![הגדרה אוטומטית של אחראי](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/8-auto-assign.png)
 
@@ -77,8 +89,27 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 נלחץ על ה-main שבפינה השמאלית למטה, ונבחר בתפריט Create new branch.
 ניתן לו שם, שיהיה בעל משמעות כמובן.
 
-![פתיחת branch](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/9-new-branch.png)
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%209.png?raw=true)
 
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2010.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2011.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2012.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2013.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2014.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2015.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2016.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2017.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2018.png?raw=true)
+
+![פתיחת branch](https://github.com/Meir-Crombie/maakaf_home1/blob/main/assets/images/how_to_start/Screenshot%2019.png?raw=true)
 נוכל לראות שאיפה שהיה main קודם עכשיו מופיע הבראנץ' החדש שפתחנו - כלומר עכשיו אנחנו עובדים על הבראנץ' החדש, וכל השינויים שנבצע ישמרו רק בו.
 
 נתקין את כל הספריות באמצעות הפקודה
@@ -157,3 +188,10 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 עכשיו אנחנו מוכנים לצאת שוב לדרך!
 
 ![סנכרון הפורק](https://raw.githubusercontent.com/Maakaf/maakaf_home/main/assets/images/how_to_start/18-sync.png)
+
+### לסיכום
+
+פתאום תרומה לקוד פתוח כבר לא נראית כל כך מאיימת הא?
+
+עכשיו כשתרגלתם את זה במו ידיכם, הגיע הזמן למצוא פרויקטים לתרום אליהם.
+כדי למצוא אותם בעמוד הפרוייקטים המומלצים באתר שלנו.
