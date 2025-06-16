@@ -7,8 +7,7 @@
  * addresses, and other person-related information.
  */
 
-#ifndef GENERATOR_H
-#define GENERATOR_H
+#pragma once
 
 #include <string>
 #include <vector>
@@ -86,4 +85,3 @@ std::vector<Person> generateMultiplePeople(int count);
  */
 bool exportData(const std::vector<Person>& people, const std::string& filename);
 
-#endif // GENERATOR_H

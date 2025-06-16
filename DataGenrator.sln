@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataGenrator", "DataGenrator.vcxproj", "{A90FE4D1-446B-4AA2-A3A9-62A1CA55A646}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataGenerator", "DataGenrator.vcxproj", "{A90FE4D1-446B-4AA2-A3A9-62A1CA55A646}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataGeneratorGUI", "DataGeneratorGUI\DataGeneratorGUI.vcxproj", "{47C4D25E-DC7C-4E97-90AE-11E76A137008}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{A90FE4D1-446B-4AA2-A3A9-62A1CA55A646}.Release|x64.Build.0 = Release|x64
 		{A90FE4D1-446B-4AA2-A3A9-62A1CA55A646}.Release|x86.ActiveCfg = Release|Win32
 		{A90FE4D1-446B-4AA2-A3A9-62A1CA55A646}.Release|x86.Build.0 = Release|Win32
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Debug|x64.ActiveCfg = Debug|x64
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Debug|x64.Build.0 = Debug|x64
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Debug|x86.ActiveCfg = Debug|Win32
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Debug|x86.Build.0 = Debug|Win32
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Release|x64.ActiveCfg = Release|x64
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Release|x64.Build.0 = Release|x64
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Release|x86.ActiveCfg = Release|Win32
+		{47C4D25E-DC7C-4E97-90AE-11E76A137008}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
