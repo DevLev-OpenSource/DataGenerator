@@ -1,16 +1,12 @@
 #pragma once
+#include "GenerativeTextData.h"
 #include "imgui/imgui.h"
-#include <string>
+
 namespace DataGeneratorGUI {
 
-
-	std::string generateRandomPhoneNumbers(int Num);
 	void SetupDockingLayout();
 	void MainWindow(bool open);
-	void PhoneNumbersUI();
-	void FirstNameUI();
-	void LastNamerUI();
-	void FullNameUI();
-	void IDNumberUI();
-	void FullRecordGeneratorUI();
+	void DrawTextGeneratorUI(
+		GenerativeTextData& dataModel // The data model instance for this specific generator
+	);
 }

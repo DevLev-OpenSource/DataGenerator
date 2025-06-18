@@ -88,6 +88,7 @@ int main(int, char**)
 	ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dDeviceContext);
 
 	// Our state
+	// the show_another_window and show_demo_window boolean variables are used to control the visibility of the windows.
 	bool show_demo_window = false;
 	bool show_another_window = true;
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);

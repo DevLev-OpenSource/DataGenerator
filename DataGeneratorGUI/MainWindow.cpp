@@ -1,14 +1,13 @@
 #pragma once
 #include "../DataGenerator/generator.h"
-#include "imgui/imgui.h"
+#include "GenerativeTextData.h"
 #include "MainWindow.h"
-#include <cstdio>
-#include <cstring>
+#include <imgui/imgui.h>
 #include <imgui/imgui_internal.h>
-#include <set>
+#include <imgui/imgui_stdlib.h>
 #include <string>
 namespace DataGeneratorGUI {
-	constexpr const char* const PHONENUMINPUT = "##Number of phone numbers to generate";
+	constexpr const int MAXDISPLAYLINES = 10;
 	// Flags for the host window, which is the main docking window
 	ImGuiWindowFlags host_window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove
 		| ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoBringToFrontOnFocus
@@ -62,221 +61,85 @@ namespace DataGeneratorGUI {
 			g_firstFrame = false;
 			SetupDockingLayout();
 		}
-
-		ImGui::End(); // End of the MainDockSpaceHost window
+		// End of the MainDockSpaceHost window
+		ImGui::End();
+		// Start of the Data Generator window
 		ImGui::Begin("Data Generator", &open);
-		PhoneNumbersUI();
-		FirstNameUI();
-		LastNamerUI();
-		FullNameUI();
-		IDNumberUI();
-		FullRecordGeneratorUI();
 
+		// Create a static instance of GenerativeTextData for each generator type
+		static GenerativeTextData phoneDataModel("Phone Numbers Generator", generateRandomPhoneNumbers);
+		DrawTextGeneratorUI(phoneDataModel);
+
+		static GenerativeTextData firstNameDataModel("First Name Generator", generateRandomFirstNames);
+		DrawTextGeneratorUI(firstNameDataModel);
+
+
+		static GenerativeTextData lastNameDataModel("Last Name Generator", generateRandomLastNames);
+		DrawTextGeneratorUI(lastNameDataModel);
+
+
+		static GenerativeTextData fullNameDataModel("Full Name Generator", generateRandomFullNames);
+		DrawTextGeneratorUI(fullNameDataModel);
+
+
+		static GenerativeTextData IDdataModel("ID Number Generator", generateRandomIDNumbers);
+		DrawTextGeneratorUI(IDdataModel);
+
+
+		static GenerativeTextData fullRecorddataModel("Full Record Generator", generateFullRecords);
+		DrawTextGeneratorUI(fullRecorddataModel);
+
+		// End of the Data Generator window
 		ImGui::End();
 
 	}
-	void PhoneNumbersUI() {
-		if (ImGui::CollapsingHeader("Phone Numbers Generator")) {
+	void DrawTextGeneratorUI(GenerativeTextData& dataModel)
+	{
+		// Using the dataModel's title for the CollapsingHeader + ID.
+		if (ImGui::CollapsingHeader(dataModel.GetTitle().c_str())) {
 
-			static int inputNumOfNames = 1;
-			static char generatedPhoneNumber[1024] = "";
-			static bool showTextBox = false;
-			ImGui::InputInt(PHONENUMINPUT, &inputNumOfNames);
+			// Push a unique ID for this widget instance to ensure no ID conflicts.
+			// "##" is to the title to make it an invisible ID otherwise it will show right next to the widget.
+			std::string widgetId = "##" + dataModel.GetTitle();
+			ImGui::PushID(widgetId.c_str());
 
-			ImGuiID inputId = ImGui::GetID(PHONENUMINPUT);
-			ImGuiID activeId = ImGui::GetItemID();
+			// Input field for the number of items to generate
+			ImGui::InputInt("##Input", &dataModel.inputCount);
 
-			if (activeId == inputId && (ImGui::IsKeyPressed(ImGuiKey_Enter) || ImGui::IsKeyPressed(ImGuiKey_KeypadEnter)) || ImGui::Button("Generate")) {
-				std::string result = generateRandomPhoneNumbers(inputNumOfNames);
-				strncpy_s(generatedPhoneNumber, result.c_str(), sizeof(generatedPhoneNumber));
-				generatedPhoneNumber[sizeof(generatedPhoneNumber) - 1] = '\0';
-				showTextBox = true;
+			// Get the widget ID of the InputInt for Enter key detection
+			ImGuiID inputId = ImGui::GetID("##Input");
+			ImGuiID activeId = ImGui::GetItemID(); // GetID of the last active item
+
+			// Check for "Generate" button click OR Enter key press while InputInt is active
+			if ((activeId == inputId && (ImGui::IsKeyPressed(ImGuiKey_Enter) || ImGui::IsKeyPressed(ImGuiKey_KeypadEnter))) || ImGui::Button("Generate")) {
+				// Call the data model's Generate function to update its internal strings
+				dataModel.Generate(MAXDISPLAYLINES);
+				dataModel.showTextBox = true; // Show the text box after generation
 			}
-			if (showTextBox) {
+
+			if (dataModel.showTextBox) {
+
 				ImGui::InputTextMultiline(
-					"##generated_numbers",
-					generatedPhoneNumber,
-					IM_ARRAYSIZE(generatedPhoneNumber),
+					"##generatedData",
+					&dataModel.GetData(), // Pass a pointer to the std::string
 					ImVec2(0, 0),
-					ImGuiInputTextFlags_ReadOnly
+					ImGuiInputTextFlags_ReadOnly // Make it read-only
 				);
-				if (ImGui::Button("Copy##Phone Numbers")) {
-					ImGui::SetClipboardText(generatedPhoneNumber);
+
+				// --- Action Buttons ---
+				// Push another ID for the buttons to prevent conflicts if multiple button sets are on screen
+				ImGui::PushID("##ActionButtons"); // Add ## for invisible ID
+				if (ImGui::Button("Copy")) {
+					ImGui::SetClipboardText(dataModel.GetData().c_str()); // Copy all the data to clipboard
 				}
 				ImGui::SameLine();
-				if (ImGui::Button("Export##Phone Numbers")) {
-					ImGui::SetClipboardText(generatedPhoneNumber);
-					// TODO: Open file dialog, export logic, etc.
+				if (ImGui::Button("Export")) {
+					// TODO: Implement actual file dialog and export logic here,
+					ImGui::SetClipboardText(dataModel.GetData().c_str()); // Placeholder: still copies
 				}
+				ImGui::PopID(); // Pop "ActionButtons" ID
 			}
-		}
-	}
-	std::string generateRandomPhoneNumbers(int Num) {
-		std::string result;
-		for (int i = 0; i < Num; ++i) {
-			char buffer[32];
-			snprintf(buffer, sizeof(buffer), generateRandomPhoneNumber().c_str());
-			result += buffer;
-			result += "\n";
-		}
-		return result;
-	}
-	void FirstNameUI() {
-		if (ImGui::CollapsingHeader("First Name Generator")) {
-			static char generatedFirstName[1024] = "";
-			static bool showTextBox = false;
-
-			if (ImGui::Button("Generate First Name")) {
-				std::string result = generateRandomFirstName();
-				strncpy_s(generatedFirstName, result.c_str(), sizeof(generatedFirstName));
-				generatedFirstName[sizeof(generatedFirstName) - 1] = '\0';
-				showTextBox = true;
-			}
-
-			if (showTextBox) {
-				ImGui::InputTextMultiline(
-					"##generated_first_name",
-					generatedFirstName,
-					IM_ARRAYSIZE(generatedFirstName),
-					ImVec2(0, 0),
-					ImGuiInputTextFlags_ReadOnly
-				);
-				if (ImGui::Button("Copy##First Name")) {
-					ImGui::SetClipboardText(generatedFirstName);
-				}
-				ImGui::SameLine();
-				if (ImGui::Button("Export##First Name")) {
-					ImGui::SetClipboardText(generatedFirstName);
-					// TODO: Open file dialog, export logic, etc.
-				}
-			}
-		}
-	}
-	void LastNamerUI() {
-		if (ImGui::CollapsingHeader("Last Name Generator")) {
-			static char generatedLastName[1024] = "";
-			static bool showTextBox = false;
-			static std::set<std::string> usedLastNames;
-
-			if (ImGui::Button("Generate Last Name")) {
-				std::string result = generateRandomLastName(usedLastNames);
-				strncpy_s(generatedLastName, result.c_str(), sizeof(generatedLastName));
-				generatedLastName[sizeof(generatedLastName) - 1] = '\0';
-				showTextBox = true;
-			}
-
-			if (showTextBox) {
-				ImGui::InputTextMultiline(
-					"##generated_last_name",
-					generatedLastName,
-					IM_ARRAYSIZE(generatedLastName),
-					ImVec2(0, 0),
-					ImGuiInputTextFlags_ReadOnly
-				);
-				if (ImGui::Button("Copy##Last Name")) {
-					ImGui::SetClipboardText(generatedLastName);
-				}
-				ImGui::SameLine();
-				if (ImGui::Button("Export##Last Name")) {
-					ImGui::SetClipboardText(generatedLastName);
-					// TODO: Open file dialog, export logic, etc.
-				}
-			}
-		}
-	}
-	void FullNameUI() {
-		if (ImGui::CollapsingHeader("Full Name Generator")) {
-			static char generatedFullName[1024] = "";
-			static bool showTextBox = false;
-			static std::set<std::string> usedLastNamesForFullName;
-
-			if (ImGui::Button("Generate Full Name")) {
-				std::string result = generateRandomFullName(usedLastNamesForFullName);
-				strncpy_s(generatedFullName, result.c_str(), sizeof(generatedFullName));
-				generatedFullName[sizeof(generatedFullName) - 1] = '\0';
-				showTextBox = true;
-			}
-
-			if (showTextBox) {
-				ImGui::InputTextMultiline(
-					"##generated_full_name",
-					generatedFullName,
-					IM_ARRAYSIZE(generatedFullName),
-					ImVec2(0, 0),
-					ImGuiInputTextFlags_ReadOnly
-				);
-				if (ImGui::Button("Copy##Full Name")) {
-					ImGui::SetClipboardText(generatedFullName);
-				}
-				ImGui::SameLine();
-				if (ImGui::Button("Export##Full Name")) {
-					ImGui::SetClipboardText(generatedFullName);
-					// TODO: Open file dialog, export logic, etc.
-				}
-			}
-		}
-	}
-	void IDNumberUI() {
-		if (ImGui::CollapsingHeader("ID Number Generator")) {
-			static char generatedIDNumber[1024] = "";
-			static bool showTextBox = false;
-
-			if (ImGui::Button("Generate ID Number")) {
-				std::string result = generateRandomIDNumber();
-				strncpy_s(generatedIDNumber, result.c_str(), sizeof(generatedIDNumber));
-				generatedIDNumber[sizeof(generatedIDNumber) - 1] = '\0';
-				showTextBox = true;
-			}
-
-			if (showTextBox) {
-				ImGui::InputTextMultiline(
-					"##generated_id_number",
-					generatedIDNumber,
-					IM_ARRAYSIZE(generatedIDNumber),
-					ImVec2(0, 0),
-					ImGuiInputTextFlags_ReadOnly
-				);
-				if (ImGui::Button("Copy##ID Number")) {
-					ImGui::SetClipboardText(generatedIDNumber);
-				}
-				ImGui::SameLine();
-				if (ImGui::Button("Export##ID Number")) {
-					ImGui::SetClipboardText(generatedIDNumber);
-					// TODO: Open file dialog, export logic, etc.
-				}
-			}
-		}
-	}
-	void FullRecordGeneratorUI() {
-		if (ImGui::CollapsingHeader("Full Record Generator")) {
-			static char generatedFullRecord[4096] = "";
-			static bool showTextBox = false;
-			static std::set<std::string> usedLastNamesForRecord;
-
-			if (ImGui::Button("Generate Full Record")) {
-				std::string result = generateFullRecord(usedLastNamesForRecord);
-				strncpy_s(generatedFullRecord, result.c_str(), sizeof(generatedFullRecord));
-				generatedFullRecord[sizeof(generatedFullRecord) - 1] = '\0';
-				showTextBox = true;
-			}
-
-			if (showTextBox) {
-				ImGui::InputTextMultiline(
-					"##generated_full_record",
-					generatedFullRecord,
-					IM_ARRAYSIZE(generatedFullRecord),
-					ImVec2(0, 0),
-					ImGuiInputTextFlags_ReadOnly
-				);
-				if (ImGui::Button("Copy##Full Record")) {
-					ImGui::SetClipboardText(generatedFullRecord);
-				}
-				ImGui::SameLine();
-				if (ImGui::Button("Export##Full Record")) {
-					ImGui::SetClipboardText(generatedFullRecord);
-					// TODO: Open file dialog, export logic, etc.
-				}
-			}
+			ImGui::PopID(); // Pop the unique ID for this widget instance
 		}
 	}
 
