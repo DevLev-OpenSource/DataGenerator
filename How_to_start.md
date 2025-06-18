@@ -108,11 +108,14 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 
 <img src="assets/how to start/Screenshot 15.png" alt="drawing"/>
 <img src="assets/how to start/Screenshot 16.png" alt="drawing"/>
+<div dir="rtl">
+
 נוכל להסתכל על כל השינויים והקומיטים שביצענו, ונלחץ על Create pull request.
+<br>
 הפול ריקווסט נוצר ומריץ מספר בדיקות ואוטומציות. תוך כמה רגעים זה מסתיים, והפול ריקווסט שלנו מוכן לריוויו על ידי מנהלי הפרויקט.
 
 
-הידד! השלמנו את התהליך!
+### הידד! השלמנו את התהליך!
 
  נוכל לדעת אם הקוד שלנו נוסף למאגר אם זה יראה לנו שעשו merge
 <img src="assets/how to start/Screenshot 19.png" alt="drawing"/>
