@@ -22,6 +22,7 @@
 #### 2. יצירת קלון Clone
 
 בריפו שנוצר אצלנו, בפורק, נעשה קלון.
+נעתיק את הקישור על ידי לחיצה על הכפתור שמסומן באדום.
 **זה למעשה יוצר עותק של הפרויקט על המחשב שלנו, ומאפשר לנו להריץ אותו לוקאלית.**
 
 <img src="assets/how to start/Screenshot 3.png" alt="drawing"/>
@@ -32,9 +33,11 @@
 נפתח את וויזואל סטודיו:
 
 <img src="assets/how to start/Screenshot 4.png" alt="drawing"/>
+נלחץ על Clone repository
 <img src="assets/how to start/Screenshot 5.png" alt="drawing"/>
+נשים את הקישור שהעתקנו מקודם במקום שמסומן באדום.
 <img src="assets/how to start/Screenshot 6.png" alt="drawing"/>
-השם לא אמור להיות meir-crombie אלא השם שלכם בגיטהאב
+
 _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו פעולות שנעשה פעם אחת כשנצטרף לפרויקט. מכאן המשך התהליך זו רוטינה שחוזרת על עצמה._
 
 #### 3. פתיחת אישיו Issue
