@@ -1,28 +1,28 @@
 /**
  * @file generator.h
  * @brief Header file for data generation functionality.
- * 
+ *
  * This file contains the declarations of functions used for
- * generating random data such as names, phone numbers, 
+ * generating random data such as names, phone numbers,
  * addresses, and other person-related information.
  */
 
 #pragma once
 
+#include <set>
 #include <string>
 #include <vector>
-#include <set>
 
-/**
- * @struct Person
- * @brief Structure to hold generated person data
- */
+ /**
+  * @struct Person
+  * @brief Structure to hold generated person data
+  */
 struct Person {
-    std::string firstName;
-    std::string lastName;
-    std::string phoneNumber;
-    std::string idNumber;
-    // Add more fields as needed
+	std::string firstName;
+	std::string lastName;
+	std::string phoneNumber;
+	std::string idNumber;
+	// Add more fields as needed
 };
 
 /**
@@ -30,13 +30,17 @@ struct Person {
  * @return A string containing a random first name
  */
 std::string generateRandomFirstName();
-
+// Generates a specified number of random first names.
+std::string generateRandomFirstNames(int n);
 /**
  * @brief Generate a random last name
  * @param usedLastNames Set of already used last names to avoid repetition
  * @return A string containing a random last name not in the usedLastNames set
  */
 std::string generateRandomLastName(std::set<std::string>& usedLastNames);
+
+// Generates a specified number of random last names.
+std::string generateRandomLastNames(int n);
 
 /**
  * @brief Generate a random full name (first + last)
@@ -45,11 +49,17 @@ std::string generateRandomLastName(std::set<std::string>& usedLastNames);
  */
 std::string generateRandomFullName(std::set<std::string>& usedLastNames);
 
+// Generates a specified number of random full names.
+std::string generateRandomFullNames(int n);
+
 /**
  * @brief Generate a random phone number in format XXX-XXXXXXX
  * @return A string containing a random phone number
  */
 std::string generateRandomPhoneNumber();
+
+// Generates a specified number of random phone numbers.
+std::string generateRandomPhoneNumbers(int n);
 
 /**
  * @brief Generate a random 8-digit ID number
@@ -57,12 +67,18 @@ std::string generateRandomPhoneNumber();
  */
 std::string generateRandomIDNumber();
 
+// Generates a specified number of random ID numbers.
+std::string generateRandomIDNumbers(int n);
+
 /**
  * @brief Generate a full record containing name, phone, and ID
  * @param usedLastNames Set of already used last names to avoid repetition
  * @return A string containing the full record data
  */
 std::string generateFullRecord(std::set<std::string>& usedLastNames);
+
+// Generates a specified number of full records.
+std::string generateFullRecords(int n);
 
 /**
  * @brief Generate a single random person
