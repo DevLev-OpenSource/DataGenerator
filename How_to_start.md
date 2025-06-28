@@ -34,8 +34,10 @@
 נלחץ על Clone repository
 
 <img src="assets/how to start/Screenshot 4.png" alt="drawing"/>
+
 נשים את הקישור שהעתקנו מקודם במקום שמסומן באדום.
 <img src="assets/how to start/Screenshot 5.png" alt="drawing"/>
+
 ואז אמור להפתח לנו הויזואל עם הפרוייקט הזה.
 <img src="assets/how to start/Screenshot 6.png" alt="drawing"/>
 
@@ -72,10 +74,13 @@ _**נשים לב!** שתי הפעולות האלו, פורק וקלון, אלו 
 
 <img src="assets/how to start/Screenshot 9.png" alt="drawing"/>
 <img src="assets/how to start/Screenshot 10.png" alt="drawing"/>
+
 אחרי שיצרתם את הבראנץ' תחזרו לסולושן אקספלורר ותחפשו את הכפתור שמוצג בתמונה ותלחצו עליו.
 <img src="assets/how to start/Screenshot 11.png" alt="drawing"/>
+
 אחר כך תלחצו על התיקיה ותחפשו את הקובץ שמופיע בתמונה ותיכנסו אליו.
 <img src="assets/how to start/Screenshot 12.png" alt="drawing"/>
+
 תוסיפו את השם שלכם הכי למטה ברשימה (כמו בתמונה).
 <img src="assets/how to start/Screenshot 13.png" alt="drawing"/>
 
