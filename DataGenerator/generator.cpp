@@ -29,6 +29,9 @@ const std::vector<std::string> PHONE_PREFIXES = { "050-", "052-", "053-", "054-"
 static std::mt19937 rng(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count()));
 
 
+
+
+
 // --- Single-Item Generation Functions (Originals) ---
 
 std::string generateRandomFirstName() {
@@ -74,12 +77,53 @@ std::string generateRandomPhoneNumber() {
 	return prefix + ss.str();
 }
 
+//helper func to validate the ID based on Israeli checksum rules
+bool isValidIsraeliID(const std::string& id) {
+	std::vector<int> IDdigits;
+
+	for (char c : id) { //turn all the chars to digits in a vector
+		IDdigits.push_back(c - '0');
+	}
+	int sum=0;
+	for (int i = 0; i < IDdigits.size()-1; i++) { //multiply based on postion as of israeli checksum rules
+		int value = IDdigits[i];
+		if (i  % 2 == 1) { //if the number is in an even index you multiply by 2 and if not it stays the same
+			value *= 2;
+		}
+		if (value > 9) {		//if the result of the mul is bigger than 9
+			value-=9;
+		}
+		sum += value;		//sum
+	}
+	int checksum = IDdigits.back(); //last digit is the checksum
+
+	sum += checksum; //add the checksum
+
+	return (sum % 10 == 0); //check if its a multiple of 10
+}
+
 std::string generateRandomIDNumber() {
-	// Generate a random 8-digit ID number
+	// Generate a random 9-digit ID number that follows Israeli checksum rules
 	std::uniform_int_distribution<int> dist(0, 99999999); // Generate up to 99,999,999
 	std::stringstream ss;
 	ss << std::setw(8) << std::setfill('0') << dist(rng); // Ensure 8 digits with leading zeros
-	return ss.str();
+	std::string first8 = ss.str();
+
+	int sum = 0;
+	for (int i = 0; i < 8; i++) {
+		int digit = first8[i] - '0';
+		if (i % 2 == 1) { // multiply odd positions by 2
+			digit *= 2;
+		}
+		if (digit > 9) { //subtract 9 if number is too big
+			digit -= 9;
+		}
+		sum += digit; //sum it all up
+	}
+
+	int checksum = (10 - (sum % 10)) % 10;
+
+	return first8 + std::to_string(checksum);
 }
 
 std::string generateFullRecord(std::set<std::string>& usedLastNames) {

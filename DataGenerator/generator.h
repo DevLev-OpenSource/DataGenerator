@@ -62,13 +62,19 @@ std::string generateRandomPhoneNumber();
 std::string generateRandomPhoneNumbers(int n);
 
 /**
- * @brief Generate a random 8-digit ID number
- * @return A string containing a random 8-digit ID
+ * @brief Generate a random 9-digit Israeli ID number
+ * @return A string containing a random Israeli ID number
  */
 std::string generateRandomIDNumber();
 
-// Generates a specified number of random ID numbers.
+// Generates a specified number of random Israeli ID numbers.
 std::string generateRandomIDNumbers(int n);
+/*
+* @a helper function that checks for 
+* @validity of an Israeli ID number based on Israeli checksum rules
+*/
+bool isValidIsraeliID(const std::string& id);
+
 
 /**
  * @brief Generate a full record containing name, phone, and ID
