@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="data.h" />
     <ClInclude Include="generator.h" />
+    <ClInclude Include="IsraeliIDConstants.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="generator.cpp" />

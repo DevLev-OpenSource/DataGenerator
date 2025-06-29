@@ -21,6 +21,9 @@
     <ClInclude Include="generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IsraeliIDConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="generator.cpp">

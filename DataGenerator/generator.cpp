@@ -15,6 +15,8 @@
 #include <sstream>     // For std::stringstream
 #include <string>
 #include <vector>
+#include "IsraeliIDConstants.h"
+
 
  // --- Global Constants (replace with your actual definitions) ---
  // These would typically be defined in a header file or a dedicated constants file.
@@ -79,50 +81,52 @@ std::string generateRandomPhoneNumber() {
 
 //helper func to validate the ID based on Israeli checksum rules
 bool isValidIsraeliID(const std::string& id) {
-	std::vector<int> IDdigits;
 
-	for (char c : id) { //turn all the chars to digits in a vector
-		IDdigits.push_back(c - '0');
+	if (id.length() != ID_LENGTH) {
+		return false;
 	}
 	int sum=0;
-	for (int i = 0; i < IDdigits.size()-1; i++) { //multiply based on postion as of israeli checksum rules
-		int value = IDdigits[i];
+	for (int i = 0; i < BODY_LENGTH; i++) { //multiply based on postion as of israeli checksum rules
+		if (!isdigit(id[i])) return false;
+		int value = id[i]-'0';
 		if (i  % 2 == 1) { //if the number is in an even index you multiply by 2 and if not it stays the same
 			value *= 2;
 		}
-		if (value > 9) {		//if the result of the mul is bigger than 9
-			value-=9;
+		if (value > THRESHOLD) {		//if the result of the mul is bigger than 9
+			value-= THRESHOLD;
 		}
 		sum += value;		//sum
 	}
-	int checksum = IDdigits.back(); //last digit is the checksum
-
+	int checksum = id[BODY_LENGTH]-'0'; //last digit is the checksum
 	sum += checksum; //add the checksum
-
-	return (sum % 10 == 0); //check if its a multiple of 10
+	return (sum % MODULO == 0); //check if its a multiple of 10
 }
 
 std::string generateRandomIDNumber() {
 	// Generate a random 9-digit ID number that follows Israeli checksum rules
-	std::uniform_int_distribution<int> dist(0, 99999999); // Generate up to 99,999,999
+	constexpr int MAX_ID_BODY = 99999999;
+
+
+
+
+	std::uniform_int_distribution<int> dist(0, MAX_ID_BODY); // Generate up to 99,999,999
 	std::stringstream ss;
-	ss << std::setw(8) << std::setfill('0') << dist(rng); // Ensure 8 digits with leading zeros
+	ss << std::setw(BODY_LENGTH) << std::setfill('0') << dist(rng); // Ensure 8 digits with leading zeros
 	std::string first8 = ss.str();
 
 	int sum = 0;
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < BODY_LENGTH; i++) {
 		int digit = first8[i] - '0';
 		if (i % 2 == 1) { // multiply odd positions by 2
 			digit *= 2;
 		}
-		if (digit > 9) { //subtract 9 if number is too big
-			digit -= 9;
+		if (digit > THRESHOLD) { //subtract 9 if number is too big
+			digit -= THRESHOLD;
 		}
 		sum += digit; //sum it all up
 	}
 
-	int checksum = (10 - (sum % 10)) % 10;
-
+	int checksum = (MODULO - (sum % MODULO)) % MODULO;
 	return first8 + std::to_string(checksum);
 }
 
