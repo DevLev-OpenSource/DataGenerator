@@ -15,6 +15,8 @@
 #include <sstream>     // For std::stringstream
 #include <string>
 #include <vector>
+#include "IsraeliIDConstants.h"
+
 
  // --- Global Constants (replace with your actual definitions) ---
  // These would typically be defined in a header file or a dedicated constants file.
@@ -80,11 +82,6 @@ std::string generateRandomPhoneNumber() {
 //helper func to validate the ID based on Israeli checksum rules
 bool isValidIsraeliID(const std::string& id) {
 
-	constexpr int ID_LENGTH = 9;
-	constexpr int BODY_LENGTH = 8;
-	constexpr int THRESHOLD = 9;
-	constexpr int MODULO = 10;
-
 	if (id.length() != ID_LENGTH) {
 		return false;
 	}
@@ -107,9 +104,6 @@ bool isValidIsraeliID(const std::string& id) {
 
 std::string generateRandomIDNumber() {
 	// Generate a random 9-digit ID number that follows Israeli checksum rules
-	constexpr int BODY_LENGTH = 8;
-	constexpr int THRESHOLD = 9;
-	constexpr int MODULO = 10;
 	constexpr int MAX_ID_BODY = 99999999;
 
 
@@ -133,7 +127,6 @@ std::string generateRandomIDNumber() {
 	}
 
 	int checksum = (MODULO - (sum % MODULO)) % MODULO;
-
 	return first8 + std::to_string(checksum);
 }
 
